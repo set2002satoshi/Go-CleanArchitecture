@@ -4,17 +4,17 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile
-    container_name: back-api
+    container_name: chapter1-back-api
     stdin_open: true
     volumes:
       - ./:/app/back-api
     ports:
      - 8000:8080
     depends_on:
-     - db-api
+     - chapter1-db
   chapter1-db:
     image: mysql:8.0
-    container_name: db-mysql
+    container_name: chapter1-db-mysql
     ports:
       - 3306:3306
     environment:
